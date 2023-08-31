@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    pre {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    code {
+      font-family: monospace;
+      background-color: #f8f8f8;
+      padding: 2px 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Frenz Valios API</h1>
+
+<h2>https://services.frenzvalios.tk/image</h2>
+  <p>Text to image API</p>
+
+<h3>Parameters</h3>
+  <ul>
+    <li><code>keyword</code> (required): The keyword, EG: <code>An astronaut in the dessert</code></li>
+  </ul>
+
+<h3>Example request</h3>
+  <p>GET https://services.frenzvalios.tk/image?keyword=An astronaut in the dessert</p>
+
+<h3>Response</h3>
+  <pre id="image"></pre>
+<br><hr><br>
+  
+  <h2>https://services.frenzvalios.tk/api</h2>
+  <p>This is the API of BingGPT</p>
+
+  <h3>Parameters</h3>
+  <ul>
+    <li><code>style</code> (required): The conversation style, <code>creative</code>, <code>balanced</code>, <code>precise</code></li>
+  <li><code>question</code> (required): Your prompt, EG:  <code>Create a Haiku about Frenz Coding this API</code></li>
+  </ul>
+
+  <h3>Example request</h3>
+  <p>GET https://services.frenzvalios.tk/api?style=creative&question=Create a Haiku about Frenz Coding this API</p>
+
+  <h3>Response</h3>
+  <pre id="gpt"></pre>
+<br><hr><br>
+  <h2>/api/fb/{fb_id}</h2>
+  <p>This endpoint allows you to retrieve the profile picture of a Facebook user with the specified ID.</p>
+
+  <h3>Parameters</h3>
+  <ul>
+    <li><code>fb_id</code> (required): The ID of the Facebook user whose profile picture you want to retrieve.</li>
+    <li><code>type</code> (optional): The format in which you want to receive the profile picture. Set this to <code>image</code> to receive the picture as an image file. Omit this parameter to receive the picture as a link.</li>
+  </ul>
+
+  <h3>Request</h3>
+  <p>GET /api/fb/100087995763221</p>
+
+  <h3>Response</h3>
+  <pre id="json-data"></pre>
+
+  <h3>Request with type parameter</h3>
+  <p>GET /api/fb/100087995763221?type=image</p>
+
+  <h3>Response with type parameter</h3>
+  <p><em><img src="https://frenzvalios.xyz/api/fb/100087995763221?type=image"></em></p>
+</body>
+  <script>
+        fetch('https://frenzvalios.xyz/api/fb/100087995763221')
+    .then(response => response.json())
+    .then(data => {
+        const jsonData = JSON.stringify(data, null, 2);
+        document.getElementById('json-data').textContent = jsonData;
+    })
+    .catch(error => console.error(error));
+
+    fetch('https://services.frenzvalios.tk/api?style=creative&question=Create%20a%20Haiku%20about%20Frenz%20Coding%20this%20API')
+    .then(response => response.json())
+    .then(data => {
+        const jsonData = JSON.stringify(data, null, 2);
+        document.getElementById('gpt').textContent = jsonData;
+    })
+    .catch(error => console.error(error));
+
+    fetch('https://services.frenzvalios.tk/image?keyword=An%20astronaut%20in%20the%20dessert')
+    .then(response => response.json())
+    .then(data => {
+        const jsonData = JSON.stringify(data, null, 2);
+        document.getElementById('image').textContent = jsonData;
+    })
+    .catch(error => console.error(error));
+    </script>
+</html>

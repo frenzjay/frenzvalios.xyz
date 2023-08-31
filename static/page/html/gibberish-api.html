@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gibberish API Documentation - Frenz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .endpoint {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gibberish API Documentation - Frenz</h1>
+        <p>Welcome to the Gibberish API documentation. You can freely use my API, enjoy!</p>
+
+        <h2>Generate Gibberish</h2>
+        <div class="endpoint">
+            <p>Generate gibberish for a given word.</p>
+            <code>GET https://frenzvalios.xyz/api/gibberish/generate?word=<em>original_word</em></code>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>word</code> (string): The original word to generate gibberish for.</li>
+            </ul>
+            <p><strong>Response:</strong></p>
+            <code>
+                {
+                    "original": "original_word",
+                    "gibberish": "generated_gibberish"
+                }
+            </code>
+        </div>
+
+        <h2>Translate Gibberish</h2>
+        <div class="endpoint">
+            <p>Translate gibberish back to the original word.</p>
+            <code>POST https://frenzvalios.xyz/api/gibberish/translate?gibberish=<em>gibberish_word</em></code>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>gibberish</code> (string): The gibberish word to translate.</li>
+            </ul>
+            <p><strong>Response:</strong></p>
+            <code>
+                {
+                    "original": "original_word",
+                    "gibberish": "gibberish_word"
+                }
+            </code>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emoji Translator - Translation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if reverse %}
+        <h1>Reverse Translation</h1>
+        <p>Entered emoji: {{ emoji }}</p>
+        <p>Translated text: {{ translated_emoji }}</p>
+        {% else %}
+        <h1>Translation</h1>
+        <p>Entered text: {{ text }}</p>
+        <p>Translated emoji: {{ translated_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook Downloader API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            padding: 20px;
+        }
+        .main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .example {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #35424a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Facebook Downloader API Documentation - Ruri</h1>
+    </header>
+    <div class="container">
+        <div class="main">
+            <h2>API Endpoint</h2>
+            <p><code>POST /</code></p>
+            
+            <h2>Request Parameters</h2>
+            <ul>
+                <li><code>type</code> (optional): The type of download (default/raw)</li>
+                <li><code>url</code> (required): The URL of the Facebook video, live stream, or story</li>
+            </ul>
+            
+            <h2>Examples</h2>
+            
+            <h3>Using <code>curl</code></h3>
+            <pre class="example">
+curl -X POST -F "type=default" -F "url=your_url_here" https://fbdl.ruriyoshinova.dev/
+            </pre>
+            
+            <h3>Using Python</h3>
+            <pre class="example">
+import requests
+
+url = "https://fbdl.ruriyoshinova.dev/"
+
+payload = {
+    "type": "default",
+    "url": "your_url_here"
+}
+
+response = requests.post(url, data=payload)
+
+if response.status_code == 200:
+    download_link = response.text
+    print("Download Link:", download_link)
+else:
+    print("Error:", response.status_code)
+            </pre>
+            
+            <h3>Using Node.js</h3>
+            <pre class="example">
+const axios = require('axios');
+
+const url = "https://fbdl.ruriyoshinova.dev/";
+
+const payload = new URLSearchParams();
+payload.append('type', 'default');
+payload.append('url', 'your_url_here');
+
+axios.post(url, payload)
+    .then(response => {
+        if (response.status === 200) {
+            const downloadLink = response.data;
+            console.log("Download Link:", downloadLink);
+        } else {
+            console.log("Error:", response.status);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+            </pre>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Ruri Yoshinova</p>
+    </footer>
+</body>
+</html>

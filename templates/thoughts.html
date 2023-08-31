@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Thoughts</title>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', sans-serif;
+      }
+      
+      .thought {
+        position: absolute;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+      }
+      a {
+  color: black;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Thoughts</h1>
+    <a href="/your_thoughts">Click me to share your Thoughts and Feelings!</a>
+    {% for thought in thoughts %}
+      <div class="thought" style="color: {{ random_color() }}; left: {{ random_x_position() }}px; top: {{ random_y_position() }}px;">
+        {{ thought[0] }}
+      </div>
+    {% endfor %}
+  </body>
+</html>

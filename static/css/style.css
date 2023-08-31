@@ -1,0 +1,85 @@
+ body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f0f0f0, #cccccc);
+}
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333333;
+      text-align: center;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+    }
+
+    .about img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .project {
+      border: 1px solid #cccccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .project h3 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .project p {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .project a {
+      display: inline-block;
+      background-color: #333333;
+      color: #ffffff;
+      padding: 5px 10px;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+	
+	@media (max-width: 768px) {
+	  .about {
+	    flex-direction: column;
+	  }
+	  
+	  .about img {
+	    margin-right: 0;
+	    margin-bottom: 20px;
+	  }
+	  
+	  .projects {
+	    grid-template-columns: repeat(2, 1fr);
+	  }
+	}
+	
+	@media (max-width: 480px) {
+	  .projects {
+	    grid-template-columns: 1fr;
+	  }
+	}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sir Al Gwapo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .error {
+            color: red;
+        }
+        .uploaded-photos {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Pick a photo lang Sir HAHAHA</h1>
+
+        {% if error %}
+            <div class="alert alert-danger mt-3">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data" action="/alfred" class="mt-4">
+            <div class="form-group">
+                <input type="file" name="photos" class="form-control-file" multiple>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        {% if uploaded_photos %}
+            <div class="uploaded-photos mt-4">
+                <h2>Uploaded Photos:</h2>
+                <ul class="list-group">
+                    {% for photo in uploaded_photos %}
+                        <li class="list-group-item">
+                            <a href="{{ url_for('static', filename='alfred/' + photo) }}" target="_blank">{{ photo }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div><br><br><br>
+  <p>Note: <br> This does not compress the images unlike in Facebook Messenger, you can directly share the images to users.</p>
+</body>
+</html>

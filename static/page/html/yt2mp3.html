@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to Mp3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            background-color: #e0e0e0;
+        }
+
+        button {
+            position: relative;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes loading {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading {
+            display: none;
+        }
+
+        #audioPlayer {
+            display: none;
+        }
+
+        audio {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube to Mp3 - Frenz</h1>
+        <input type="text" id="urlInput" placeholder="Enter YouTube URL">
+        <button id="extractButton">Extract Audio <span id="loadingSpinner" class="loading">&#8987;</span></button>
+        <audio controls id="audioPlayer">
+            Your browser does not support the audio element.
+        </audio>
+    </div><hr>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const extractButton = document.getElementById('extractButton');
+            const urlInput = document.getElementById('urlInput');
+            const audioPlayer = document.getElementById('audioPlayer');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            extractButton.addEventListener('click', async function () {
+                const url = urlInput.value;
+                if (url) {
+                    loadingSpinner.style.display = 'inline-block'; 
+                    try {
+                        const response = await fetch(`https://frenzvalios.xyz/api/yt2mp3?url=${url}`);
+                        const data = await response.json();
+                        if (data.audio_url) {
+                            audioPlayer.src = data.audio_url;
+                            audioPlayer.style.display = 'block'; 
+                            loadingSpinner.style.display = 'none'; 
+                            audioPlayer.play();
+                        }
+                    } catch (error) {
+                        console.error('Error extracting audio:', error);
+                        loadingSpinner.style.display = 'none'; 
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

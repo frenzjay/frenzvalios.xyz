@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Thoughts Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        font-weight: bold;
+        color: #555;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 16px;
+        resize: none;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Thoughts</h1>
+    <form method="POST">
+      <label for="thought">Enter your thought:</label><br>
+      <textarea id="thought" name="thought"></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<div class="api">
+   <small><h1>API:</h1>
+    <p>This API allows you to fetch audio URLs from YouTube videos.</p>
+
+    <h2>Usage</h2>
+    <p>To use the API, make a GET request to the following endpoint:</p>
+    <code>https://frenzvalios.xyz/api/yt2mp3?url=YOUR_YOUTUBE_VIDEO_URL</code>
+
+    <h2>Parameters</h2>
+    <p>The <code>url</code> parameter is required and should contain the YouTube video URL for which you want to fetch the audio URL.</p>
+
+    <h2>Example</h2>
+    <p>Suppose you want to fetch the audio URL for a YouTube video. Replace <code>YOUR_YOUTUBE_VIDEO_URL</code> with the actual YouTube video URL:</p>
+    <code>/youtube?url=YOUR_YOUTUBE_VIDEO_URL</code>
+
+    <h2>Response</h2>
+    <p>The API will respond with a JSON object containing the audio URL:</p>
+    <pre></small>
+{
+    "audio_url": "https://audio.example.com/audio12345"
+}
+    </pre>
+
+    <p>If the request is successful, you can use the provided <code>audio_url</code> to play the audio.</p></div>
