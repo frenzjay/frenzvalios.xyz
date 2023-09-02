@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gibberish - Frenz</title>
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         h1 {
             color: #333;
             text-align: center;
             margin-top: 30px;
         }
-        form {
-            max-width: 400px;
-            margin: 30px auto;
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         label {
             display: block;
             margin-bottom: 10px;
             color: #555;
         }
-        input[type="text"] {
+
+        textarea {
             width: 100%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        button[type="submit"] {
+
+        button {
+            display: block;
+            margin: 20px auto;
             padding: 10px 20px;
             font-size: 16px;
             background-color: #007BFF;
@@ -44,73 +52,85 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        button[type="submit"]:hover {
+
+        button:hover {
             background-color: #0056b3;
         }
+
         h2 {
             color: #333;
             text-align: center;
             margin-top: 30px;
         }
-        p {
+
+        pre {
+            white-space: pre-wrap;
             text-align: center;
             margin-top: 10px;
-          font-family: Arial, sans-serif;
-          font-size: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
         }
-      .copy {
+
+        .copy {
+            display: block;
+            margin: 20px auto;
             padding: 10px 20px;
             font-size: 16px;
-            border: none;
-            border-radius: 4px;
             background-color: #007BFF;
             color: #fff;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .copy:hover {
             background-color: #0056b3;
         }
-      </style>
+    </style>
 </head>
 <body>
     <h1>Gibberish - Frenz, unta mo taas naka Mrs. Caroro</h1>
-    <form action="/gibberish" method="POST">
-        <label for="word">Enter a word:</label>
-        <input type="text" id="word" name="word" required>
-        <button type="submit">Generate Gibberish</button>
-    </form>
+    <div class="container">
+        <form action="/gibberish" method="POST">
+            <label for="word">Enter a word:</label>
+            <textarea id="word" name="word" rows="5" required></textarea>
+            <button type="submit">Generate Gibberish</button>
+        </form>
 
-    {% if original_word and gibberish_word %}
-    <div>
-        <h2>Generated Gibberish</h2>
-        <p>Original Word: {{ original_word }}</p>
-        <p>Gibberish: {{ gibberish_word }}</p>
-        <button class="copy" onclick="copyToClipboard('{{ gibberish_word }}')">Copy Gibberish</button>
-    </div>
-    {% endif %}
+        {% if original_word and gibberish_word %}
+        <div>
+            <h2>Generated Gibberish</h2>
+            <p>Original Word:</p>
+            <pre>{{ original_word }}</pre>
+            <p>Gibberish:</p>
+            <pre>{{ gibberish_word }}</pre>
+            <button class="copy" onclick="copyToClipboard('{{ gibberish_word }}')">Copy Gibberish</button>
+        </div>
+        {% endif %}
 
-    <br><br><br>
-    <h1>Gibberish Decrypt</h1>
-    <form action="/gibberish/translate" method="post">
-        <label for="gibberish">Enter gibberish:</label><br>
-        <input type="text" id="gibberish" name="gibberish"><br><br>
-        <button type="submit">Translate</button>
-    </form>
+        <br><br><br>
+        <h1>Gibberish Decrypt</h1>
+        <form action="/gibberish/translate" method="post">
+            <label for="gibberish">Enter gibberish:</label><br>
+            <textarea id="gibberish" name="gibberish" rows="5"></textarea><br><br>
+            <button type="submit">Translate</button>
+        </form>
 
-    {% if word %}
-    <div>
-        <h2>Decrypted Result</h2>
-        <p>Original: {{ word.original }}</p>
-        <p>Gibberish: {{ word.gibberish }}</p>
-        <button class="copy" onclick="copyToClipboard('{{ word.gibberish }}')">Copy Gibberish</button>
+        {% if word %}
+        <div>
+            <h2>Decrypted Result</h2>
+            <p>Original:</p>
+            <pre>{{ word.original }}</pre>
+            <p>Gibberish:</p>
+            <pre>{{ word.gibberish }}</pre>
+            <button class="copy" onclick="copyToClipboard('{{ word.gibberish }}')">Copy Gibberish</button>
+        </div>
+        {% elif not_found %}
+        <div>
+            <p>Unable to decrypt <strong>{{ not_found }}</strong></p>
+        </div>
+        {% endif %}
     </div>
-    {% elif not_found %}
-    <div>
-        <p>Unable to decrypt <strong>{{ not_found }}</strong></p>
-    </div>
-    {% endif %}
     <script>
         function copyToClipboard(text) {
             const el = document.createElement('textarea');
@@ -122,6 +142,5 @@
             alert('Gibberish copied to clipboard!');
         }
     </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
