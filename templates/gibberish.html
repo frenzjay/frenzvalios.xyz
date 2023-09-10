@@ -64,12 +64,14 @@
         }
 
         pre {
-            white-space: pre-wrap;
-            text-align: center;
-            margin-top: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 20px;
-        }
+        white-space: pre-wrap;
+        text-align: center;
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        overflow: auto;
+        max-height: 200px;
+    }
 
         .copy {
             display: block;
@@ -99,50 +101,50 @@
 
         {% if original_word and gibberish_word %}
         <div>
-            <h2>Generated Gibberish</h2>
-            <p>Original Word:</p>
-            <pre>{{ original_word }}</pre>
-            <p>Gibberish:</p>
+            <h2> Gibberish:</h2><br>
             <pre>{{ gibberish_word }}</pre>
             <button class="copy" onclick="copyToClipboard('{{ gibberish_word }}')">Copy Gibberish</button>
         </div>
         {% endif %}
 
         <br><br><br>
-        <h1>Gibberish Decrypt</h1>
-        <form action="/gibberish/translate" method="post">
-            <label for="gibberish">Enter gibberish:</label><br>
-            <textarea id="gibberish" name="gibberish" rows="5"></textarea><br><br>
-            <button type="submit">Translate</button>
-        </form>
+<h1>Gibberish Decrypt</h1>
+<form action="/gibberish/translate" method="post">
+    <label for="gibberish">Enter gibberish:</label><br>
+    <textarea id="gibberish" name="gibberish" rows="5"></textarea><br><br>
+    <button type="submit">Translate</button>
+</form>
 
-        {% if word %}
-        <div>
-            <h2>Decrypted Result</h2>
-            <p>Original:</p>
-            <pre>{{ word.original }}</pre>
-            <p>Gibberish:</p>
-            <pre>{{ word.gibberish }}</pre>
-            <button class="copy" onclick="copyToClipboard('{{ word.gibberish }}')">Copy Gibberish</button>
-        </div>
-        {% elif not_found %}
-        <div>
-            <p>Unable to decrypt <strong>{{ not_found }}</strong></p>
-        </div>
-        {% endif %}
+{% if word %}
+<div>
+    <h2>Decrypted Gibberish:</h2><br>
+    <pre>{{ word.original }}</pre>
+    <button class="copy" onclick="copyToClipboard('{{ word.original }}')">Copy Original</button>
+</div>
+{% elif not_found %}
+<div>
+    <p>Unable to decrypt <strong>{{ not_found }}</strong></p>
+</div>
+{% endif %}
+
     </div>
     <script>
         function copyToClipboard(text) {
-    navigator.clipboard.writeText(text)
-        .then(() => {
-            alert('Gibberish copied to clipboard!');
-        })
-        .catch((err) => {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            alert('Copied!');
+        } catch (err) {
             console.error('Unable to copy gibberish: ', err);
             alert('Failed to copy gibberish to clipboard.');
-        });
-}
-
+        } finally {
+            document.body.removeChild(textArea);
+        }
+    }
     </script>
 </body>
 </html>
