@@ -1,85 +1,155 @@
- body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #f0f0f0, #cccccc);
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 16px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://frenzvalios.xyz/api/fb/100087995763221?type=image');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    padding-left: 40px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-right: 20px;
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about,
+.projects,
+.contact {
+    margin: 20px 0;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+[data-aos] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header ul li a:hover {
+    color: #00bcd4;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    h1 {
-      color: #333333;
-      text-align: center;
+    header .logo {
+        padding-left: 0;
     }
 
-    .about {
-      display: flex;
-      align-items: center;
+    header ul {
+        margin-top: 20px;
     }
 
-    .about img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-right: 20px;
+    header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
+}
+.api {
+    margin: 20px 0;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
 
-    .about p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
+.api-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
+.api-item[data-aos] {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .project {
-      border: 1px solid #cccccc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .project h3 {
-      font-size: 20px;
-      margin-top: 10px;
-    }
-
-    .project p {
-      font-size: 16px;
-      margin-top: 5px;
-    }
-
-    .project a {
-      display: inline-block;
-      background-color: #333333;
-      color: #ffffff;
-      padding: 5px 10px;
-      margin-top: 10px;
-      text-decoration: none;
-    }
-	
-	@media (max-width: 768px) {
-	  .about {
-	    flex-direction: column;
-	  }
-	  
-	  .about img {
-	    margin-right: 0;
-	    margin-bottom: 20px;
-	  }
-	  
-	  .projects {
-	    grid-template-columns: repeat(2, 1fr);
-	  }
-	}
-	
-	@media (max-width: 480px) {
-	  .projects {
-	    grid-template-columns: 1fr;
-	  }
-	}
+.api-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
