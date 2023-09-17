@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <style>
+      body {
+            background-color: #222;
+      }
+        #container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        {% for image in images %}
+            <img src="{{ image }}" alt="Image">
+        {% endfor %}
+    </div>
+    <script>
+        window.onload = function() {
+            var container = document.getElementById('container');
+            var imgs = container.getElementsByTagName('img');
+            for (var i = 0, img; img = imgs[i]; i++) {
+                img.style.left = Math.random() * (container.offsetWidth - img.offsetWidth) + 'px';
+                img.style.top = Math.random() * (container.offsetHeight - img.offsetHeight) + 'px';
+                img.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+            }
+        };
+    </script>
+</body>
+</html>
