@@ -26,15 +26,21 @@
     {% endfor %}
     </div>
     <script>
-        window.onload = function() {
-            var container = document.getElementById('container');
-            var imgs = container.getElementsByTagName('img');
-            for (var i = 0, img; img = imgs[i]; i++) {
-                img.style.left = Math.random() * (container.offsetWidth - img.offsetWidth) + 'px';
-                img.style.top = Math.random() * (container.offsetHeight - img.offsetHeight) + 'px';
-                img.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
-            }
-        };
-    </script>
+    window.onload = function() {
+    var container = document.getElementById('container');
+    var imgs = container.getElementsByTagName('img');
+    for (var i = 0, img; img = imgs[i]; i++) {
+        img.style.left = Math.random() * (container.offsetWidth - img.offsetWidth) + 'px';
+        img.style.top = Math.random() * (container.offsetHeight - img.offsetHeight) + 'px';
+        img.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+        
+        img.addEventListener('click', function() {
+            var imageLink = this.getAttribute('src');
+            window.open(imageLink, '_blank');
+        });
+    }
+};
+</script>
+
 </body>
 </html>
