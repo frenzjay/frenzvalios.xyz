@@ -14,16 +14,16 @@
         }
         img {
             position: absolute;
-            max-width: 100px;
-            max-height: 100px;
+            max-width: 50px;
+            max-height: 50px;
         }
     </style>
 </head>
 <body>
     <div id="container">
-        {% for image in images %}
-            <img src="{{ image }}" alt="Image">
-        {% endfor %}
+        {% for img_tag in img_tags %}
+        {{ img_tag|safe }}
+    {% endfor %}
     </div>
     <script>
         window.onload = function() {
