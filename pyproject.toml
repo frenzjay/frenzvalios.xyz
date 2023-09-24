@@ -22,6 +22,7 @@ pandas = "^2.0.1"
 Flask-SQLAlchemy = "^3.0.5"
 yt-dlp = "^2023.7.6"
 PyGithub = "^1.59.1"
+Flask-Admin = "^1.6.1"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"
