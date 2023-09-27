@@ -1,0 +1,441 @@
+[{
+  "grade": 11,
+  "section": "Sapphire",
+  "students": [
+    {
+      "gender": "male",
+      "name": "Esguerra, Mark lan J."
+    },
+    {
+      "gender": "male",
+      "name": "Garzo, Ryan Christopher B."
+    },
+    {
+      "gender": "male",
+      "name": "Lomuya, Cyrone E."
+    },
+    {
+      "gender": "male",
+      "name": "Orial, Joerich T."
+    },
+    {
+      "gender": "male",
+      "name": "Pantonial, Ar-Jay A."
+    },
+    {
+      "gender": "male",
+      "name": "Pusod, Joerix B."
+    },
+    {
+      "gender": "male",
+      "name": "Pusod, John Rhyl B."
+    },
+    {
+      "gender": "male",
+      "name": "Selim, Alvin A."
+    },
+    {
+      "gender": "male",
+      "name": "Talaboc, Nhash Hans B."
+    },
+    {
+      "gender": "male",
+      "name": "Untolan, Kevin S."
+    },
+    {
+      "gender": "male",
+      "name": "Valios, Frenz Jay-R Y."
+    },
+    {
+      "gender": "female",
+      "name": "Abarri, Mae Kyla C."
+    },
+    {
+      "gender": "female",
+      "name": "Banico, Faith Kiarrah A."
+    },
+    {
+      "gender": "female",
+      "name": "Bongcaron, Hannah Richie"
+    },
+    {
+      "gender": "female",
+      "name": "Carondoy, Jessa Mae B"
+    },
+    {
+      "gender": "female",
+      "name": "Dandoy, Junie Vie N."
+    },
+    {
+      "gender": "female",
+      "name": "Halangdon, Kayla"
+    },
+    {
+      "gender": "female",
+      "name": "Lozano, Mardel Lee O."
+    },
+    {
+      "gender": "female",
+      "name": "Maglinte, Felyn Mae M."
+    },
+    {
+      "gender": "female",
+      "name": "Marchan, Lady Mae T."
+    },
+    {
+      "gender": "female",
+      "name": "Marchan, Lady Mer T."
+    },
+    {
+      "gender": "female",
+      "name": "Papaya, Jayme D."
+    },
+    {
+      "gender": "female",
+      "name": "Selim, Ella Mae"
+    }
+  ]
+},
+
+{
+  "grade": 8,
+  "section": "Turquoise",
+  "students": [
+    {
+      "gender": "male",
+      "name": "Abjelima, Harvey P"
+    },
+    {
+      "gender": "male",
+      "name": "Agan, Chaise Q"
+    },
+    {
+      "gender": "male",
+      "name": "Agan, Martiou Ivan M"
+    },
+    {
+      "gender": "male",
+      "name": "Alvarico, Francis Jose M"
+    },
+    {
+      "gender": "male",
+      "name": "Ambaleng Glan Pyl A"
+    },
+    {
+      "gender": "male",
+      "name": "Ambalong Jean Claude M"
+    },
+    {
+      "gender": "male",
+      "name": "Andoyan, Arjun V"
+    },
+    {
+      "gender": "male",
+      "name": "Arcamo John Ryt"
+    },
+    {
+      "gender": "male",
+      "name": "Blano, Lynch Dyn"
+    },
+    {
+      "gender": "male",
+      "name": "Buling, Jheven Aetherry E"
+    },
+    {
+      "gender": "male",
+      "name": "Calunsag. Jedray W"
+    },
+    {
+      "gender": "male",
+      "name": "Claracal, Joel Ar"
+    },
+    {
+      "gender": "male",
+      "name": "Garcia Jurub Selwyn T"
+    },
+    {
+      "gender": "male",
+      "name": "Gumised, Vince Joseph"
+    },
+    {
+      "gender": "male",
+      "name": "Macal Christian Jade T"
+    },
+    {
+      "gender": "male",
+      "name": "Monts Jhon Louis B"
+    },
+    {
+      "gender": "male",
+      "name": "Perew perew, Paul Jake N"
+    },
+    {
+      "gender": "male",
+      "name": "Rublo Alvin 5. Jr."
+    },
+    {
+      "gender": "male",
+      "name": "Sente Ron August Shane A"
+    },
+    {
+      "gender": "male",
+      "name": "Selim, Paul A"
+    },
+    {
+      "gender": "male",
+      "name": "Slangen Jan"
+    },
+    {
+      "gender": "male",
+      "name": "Suan, Jarred D"
+    },
+    {
+      "gender": "male",
+      "name": "Valios, Xian Anthony"
+    },
+    {
+      "gender": "male",
+      "name": "Yap, Raichen Anthony"
+    },
+    {
+      "gender": "male",
+      "name": "Agan, Allan Matthew L"
+    },
+    {
+      "gender": "female",
+      "name": "Cyrene Mas"
+    },
+    {
+      "gender": "female",
+      "name": "Albon, Vi Alizze Shandy"
+    },
+    {
+      "gender": "female",
+      "name": "Apas, Berlimie D"
+    },
+    {
+      "gender": "female",
+      "name": "Begood, Riefaya Jane A"
+    },
+    {
+      "gender": "female",
+      "name": "Baguio, Brynne PH"
+    },
+    {
+      "gender": "female",
+      "name": "Baguio, Crystal J"
+    },
+    {
+      "gender": "female",
+      "name": "Borbor, Nathalie 0."
+    },
+    {
+      "gender": "female",
+      "name": "Camans, Chenavel E"
+    },
+    {
+      "gender": "female",
+      "name": "Danday, Junielyn N"
+    },
+    {
+      "gender": "female",
+      "name": "Jumalon Zilla June M"
+    },
+    {
+      "gender": "female",
+      "name": "Lagudes, Rhaize Katee K"
+    },
+        {
+      "gender": "female",
+      "name": "Maghanoy, Rayhanne Cahmille E"
+    },
+    {
+      "gender": "female",
+      "name": "Maglinte Althea Lee L"
+    },
+    {
+      "gender": "female",
+      "name": "Matuod, Yesha Marizete P."
+    },
+    {
+      "gender": "female",
+      "name": "Pantonial, Angel Rica A."
+    },
+    {
+      "gender": "female",
+      "name": "Pascual, Edgin"
+    },
+    {
+      "gender": "female",
+      "name": "Perez, Criz Sherazade E"
+    },
+    {
+      "gender": "female",
+      "name": "Satumeacal, Ivy P."
+    },
+    {
+      "gender": "female",
+      "name": "Selim, Prissy Shaira M"
+    },
+    {
+      "gender": "female",
+      "name": "Siao, Anne Clara G."
+    },
+    {
+      "gender": "female",
+      "name": "Yano, Lyle Danicah Danille P."
+    },
+    {
+      "gender": "male",
+      "name": "Heaven Ates"
+    }
+  ]
+},
+  {
+  "grade": 10,
+  "section": "Aquamarine",
+  "students": [
+    {
+      "gender": "male",
+      "name": "Ace Candidicimo"
+    },
+    {
+      "gender": "male",
+      "name": "Aivan Barbadillo"
+    },
+    {
+      "gender": "female",
+      "name": "Angelie Gonzaga"
+    },
+    {
+      "gender": "male",
+      "name": "Bhrent Bulangis Supremo"
+    },
+    {
+      "gender": "male",
+      "name": "Caizher Nick Pactol"
+    },
+    {
+      "gender": "male",
+      "name": "Calvin Casem"
+    },
+    {
+      "gender": "female",
+      "name": "Cathel Dongon"
+    },
+    {
+      "gender": "female",
+      "name": "Catherine Fea Cedullo"
+    },
+    {
+      "gender": "female",
+      "name": "Chinel Mae Jumawan"
+    },
+    {
+      "gender": "male",
+      "name": "Chrisjoh Salindo Salas"
+    },
+    {
+      "gender": "male",
+      "name": "Christian Gaebrielle Flores"
+    },
+    {
+      "gender": "male",
+      "name": "Ezell Usaraga"
+    },
+    {
+      "gender": "female",
+      "name": "Glaiza Myrr Porol"
+    },
+    {
+      "gender": "female",
+      "name": "Hailey Duhaylongsod"
+    },
+    {
+      "gender": "female",
+      "name": "Hannah Lian Apiag"
+    },
+    {
+      "gender": "male",
+      "name": "Jairylle Lapinig"
+    },
+    {
+      "gender": "male",
+      "name": "Jerald Aton"
+    },
+    {
+      "gender": "female",
+      "name": "Joziah Nicole Epis"
+    },
+    {
+      "gender": "male",
+      "name": "Judex Lex Jaicten"
+    },
+    {
+      "gender": "female",
+      "name": "Kristyjel Pinto"
+    },
+    {
+      "gender": "male",
+      "name": "Lynnard Manalo"
+    },
+    {
+      "gender": "female",
+      "name": "Mae Christine Tomimbang"
+    },
+    {
+      "gender": "female",
+      "name": "Mery Jane Orial"
+    },
+    {
+      "gender": "female",
+      "name": "Nerissa Yabo"
+    },
+    {
+      "gender": "male",
+      "name": "Paul Vincent Perewperew"
+    },
+    {
+      "gender": "female",
+      "name": "Princess Jeresa Daling"
+    },
+    {
+      "gender": "male",
+      "name": "Pritz Dimasuhid"
+    },
+    {
+      "gender": "female",
+      "name": "Rea Malicay"
+    },
+    {
+      "gender": "male",
+      "name": "RJ Tubo"
+    },
+    {
+      "gender": "male",
+      "name": "Robert Gumisad"
+    },
+    {
+      "gender": "female",
+      "name": "Samantha Ponce"
+    },
+    {
+      "gender": "female",
+      "name": "Samantha Jasmen Largo"
+    },
+    {
+      "gender": "female",
+      "name": "Scepter Bliss Agan"
+    },
+    {
+      "gender": "female",
+      "name": "Sharie Kate Tuastomban"
+    },
+    {
+      "gender": "female",
+      "name": "Willa Quezon Agan"
+    }
+  ]
+}
+
+]
